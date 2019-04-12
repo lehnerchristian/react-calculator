@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import Display from '../Display/Display';
 import './Calculator.css';
+import Keypad from '../Keypad/Keypad';
 
 interface ICalculatorState {
   displayValue: string;
@@ -26,23 +27,24 @@ export default class Calculator extends React.Component<{}, ICalculatorState> {
   };
 
   public render() {
-    const { displayValue } = this.state;
+    const { displayValue, numbers, operators } = this.state;
     return (
       <div className="calculator-container">
         <Display displayValue={displayValue} />
+        <Keypad callOperator={this.callOperator} setOperator={this.setOperator} updateDisplay={this.updateDisplay} numbers={numbers} operators={operators}  />
       </div>
     );
   }
 
-  private callOperator = () => {
-    console.log('call operation');
-  };
-
-  private setOperator = () => {
+  public setOperator = () => {
     console.log('set operation');
   };
 
-  private updateDisplay = () => {
+  public updateDisplay = () => {
     console.log('update display');
+  };
+
+  public callOperator = () => {
+    console.log('call operation');
   };
 }
