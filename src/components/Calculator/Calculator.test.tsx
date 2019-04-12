@@ -27,7 +27,7 @@ describe('Calculator', () => {
           operators={(wrapper.instance() as Calculator).state.operators}
           setOperator={(wrapper.instance() as Calculator).setOperator}
           updateDisplay={(wrapper.instance() as Calculator).updateDisplay}
-        />
+        />,
       ]),
     ).toEqual(true);
   });
