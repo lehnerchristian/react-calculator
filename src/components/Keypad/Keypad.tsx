@@ -8,8 +8,8 @@ interface IKeypad {
   numbers: string[];
   operators: string[];
   callOperator(): void;
-  setOperator(): void;
-  updateDisplay(): void;
+  setOperator(value: string): void;
+  updateDisplay(value: string): void;
 }
 
 const Keypad: React.SFC<IKeypad> = ({
