@@ -1,6 +1,5 @@
 import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme';
 import * as React from 'react';
-import Key from '../Key/Key';
 import Keypad from './Keypad';
 
 describe('Keypad', () => {

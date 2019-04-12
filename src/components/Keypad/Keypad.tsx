@@ -5,7 +5,7 @@ import * as React from 'react';
 import Key from '../Key/Key';
 
 interface IKeypad {
-  numbers: number[];
+  numbers: string[];
   operators: string[];
   callOperator(): void;
   setOperator(): void;
@@ -28,7 +28,7 @@ const Keypad: React.SFC<IKeypad> = ({
     />
   ));
   const operatorKeys = operators.map(o => (
-    <Key key={o} keyAction={setOperator} keyType="number-key" keyValue={o} />
+    <Key key={o} keyAction={setOperator} keyType="operator-key" keyValue={o} />
   ));
   return (
     <div className="keypad-container">

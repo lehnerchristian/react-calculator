@@ -10,7 +10,7 @@ interface IKey {
 }
 
 const Key: React.SFC<IKey> = ({ keyAction, keyType, keyValue }) => (
-  <div className="key-container">
+  <div className={`key-container ${keyType}`}>
     <p className="key-value">{keyValue}</p>
   </div>
 );
