@@ -7,7 +7,9 @@ interface IDisplayProps {
 
 // typings for Stateless Functional Component (SFC)
 const Display: React.SFC<IDisplayProps> = (props: IDisplayProps) => (
-  <div className="display-container" />
+  <div className="display-container">
+    <p className="display-value">{props.displayValue}</p>
+  </div>
 );
 
 // use propTypes here to have the tests fail
