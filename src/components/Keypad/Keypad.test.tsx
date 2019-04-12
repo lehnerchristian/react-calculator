@@ -1,44 +1,59 @@
-import './Keypad.css';
-
-import { shallow, ShallowWrapper } from 'enzyme';
+import { mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme';
 import * as React from 'react';
-
+import Key from '../Key/Key';
 import Keypad from './Keypad';
 
 describe('Keypad', () => {
   let wrapper: ShallowWrapper;
-
-  // create mock functions with jest.fn()
-  beforeEach(
-    () =>
-      (wrapper = shallow(
-        <Keypad
-          callOperator={jest.fn()}
-          numbers={[]}
-          operators={[]}
-          setOperator={jest.fn()}
-          updateDisplay={jest.fn()}
-        />,
-      )),
-  );
+  beforeEach(() => {
+    wrapper = shallow(
+      <Keypad
+        callOperator={jest.fn()}
+        numbers={[]}
+        operators={[]}
+        setOperator={jest.fn()}
+        updateDisplay={jest.fn()}
+      />,
+    );
+  });
 
   it('should render correctly', () => expect(wrapper).toMatchSnapshot());
 
-  it('should render a <div />', () => {
-    expect(wrapper.find('div').length).toEqual(3);
+  it("should render 4 <div />'s", () => {
+    expect(wrapper.find('div').length).toEqual(4);
   });
 
-  it('renders the values of numbers', () => {
-    wrapper.setProps({ numbers: [1, 2, 3] });
-    expect(wrapper.find('.numbers-container').text()).toEqual('123');
+  it('should render an instance of the Key component for each index of numbers, operators, and the submit Key', () => {
+    const numbers = ['0', '1'];
+    const operators = ['+', '-'];
+    const submit = 1;
+    const keyTotal = numbers.length + operators.length + submit;
+    wrapper.setProps({ numbers, operators });
+    expect(wrapper.find('Key').length).toEqual(keyTotal);
+  });
+});
+
+describe('mounted Keypad', () => {
+  let wrapper: ReactWrapper;
+  beforeEach(() => {
+    wrapper = mount(
+      <Keypad
+        callOperator={jest.fn()}
+        numbers={[]}
+        operators={[]}
+        setOperator={jest.fn()}
+        updateDisplay={jest.fn()}
+      />,
+    );
   });
 
-  it('renders the values of operators', () => {
+  it('renders the values of numbers to the DOM', () => {
+    wrapper.setProps({ numbers: ['0', '1', '2'] });
+    expect(wrapper.find('.numbers-container').text()).toEqual('012');
+  });
+
+  it('renders the values of operators to the DOM', () => {
     wrapper.setProps({ operators: ['+', '-', '*', '/'] });
     expect(wrapper.find('.operators-container').text()).toEqual('+-*/');
-  });
-
-  it('should render an instance of the Key component', () => {
-    expect(wrapper.find('Key').length).toEqual(1);
   });
 });

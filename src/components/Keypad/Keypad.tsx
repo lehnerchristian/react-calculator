@@ -19,13 +19,24 @@ const Keypad: React.SFC<IKeypad> = ({
   setOperator,
   updateDisplay,
 }) => {
-  const numberKeys = numbers.map(n => <p key={n}>{n}</p>);
-  const operatorKeys = operators.map(o => <p key={o}>{o}</p>);
+  const numberKeys = numbers.map(n => (
+    <Key
+      key={n}
+      keyAction={updateDisplay}
+      keyType="number-key"
+      keyValue={n.toString()}
+    />
+  ));
+  const operatorKeys = operators.map(o => (
+    <Key key={o} keyAction={setOperator} keyType="number-key" keyValue={o} />
+  ));
   return (
     <div className="keypad-container">
       <div className="numbers-container">{numberKeys}</div>
       <div className="operators-container">{operatorKeys}</div>
-      <Key keyAction={callOperator} keyType="" keyValue="" />
+      <div className="submit-container">
+        <Key keyAction={callOperator} keyType="submit-key" keyValue="=" />
+      </div>
     </div>
   );
 };

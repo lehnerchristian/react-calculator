@@ -35,11 +35,15 @@ ShallowWrapper {
 >
           
 </div>,
-        <Key
-          keyAction={[Function]}
-          keyType=""
-          keyValue=""
-/>,
+        <div
+          className="submit-container"
+>
+          <Key
+                    keyAction={[Function]}
+                    keyType="submit-key"
+                    keyValue="="
+          />
+</div>,
       ],
       "className": "keypad-container",
     },
@@ -72,15 +76,30 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "keyAction": [Function],
-          "keyType": "",
-          "keyValue": "",
+          "children": <Key
+            keyAction={[Function]}
+            keyType="submit-key"
+            keyValue="="
+/>,
+          "className": "submit-container",
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "keyAction": [Function],
+            "keyType": "submit-key",
+            "keyValue": "=",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "div",
       },
     ],
     "type": "div",
@@ -102,11 +121,15 @@ ShallowWrapper {
 >
             
 </div>,
-          <Key
-            keyAction={[Function]}
-            keyType=""
-            keyValue=""
-/>,
+          <div
+            className="submit-container"
+>
+            <Key
+                        keyAction={[Function]}
+                        keyType="submit-key"
+                        keyValue="="
+            />
+</div>,
         ],
         "className": "keypad-container",
       },
@@ -139,15 +162,30 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "keyAction": [Function],
-            "keyType": "",
-            "keyValue": "",
+            "children": <Key
+              keyAction={[Function]}
+              keyType="submit-key"
+              keyValue="="
+/>,
+            "className": "submit-container",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "keyAction": [Function],
+              "keyType": "submit-key",
+              "keyValue": "=",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "div",
         },
       ],
       "type": "div",

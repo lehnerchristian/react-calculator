@@ -32,7 +32,13 @@ export default class Calculator extends React.Component<{}, ICalculatorState> {
     return (
       <div className="calculator-container">
         <Display displayValue={displayValue} />
-        <Keypad callOperator={this.callOperator} setOperator={this.setOperator} updateDisplay={this.updateDisplay} numbers={numbers} operators={operators}  />
+        <Keypad
+          callOperator={this.callOperator}
+          setOperator={this.setOperator}
+          updateDisplay={this.updateDisplay}
+          numbers={numbers}
+          operators={operators}
+        />
       </div>
     );
   }
