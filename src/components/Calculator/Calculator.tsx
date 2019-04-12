@@ -1,5 +1,8 @@
 import * as React from 'react';
 
+import Display from '../Display/Display';
+import './Calculator.css';
+
 interface ICalculatorState {
   displayValue: string;
   numbers: number[];
@@ -23,7 +26,12 @@ export default class Calculator extends React.Component<{}, ICalculatorState> {
   };
 
   public render() {
-    return <div className="calculator-container" />;
+    const { displayValue } = this.state;
+    return (
+      <div className="calculator-container">
+        <Display displayValue={displayValue} />
+      </div>
+    );
   }
 
   private callOperator = () => {
