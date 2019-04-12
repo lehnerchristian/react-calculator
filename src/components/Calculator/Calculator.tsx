@@ -1,7 +1,8 @@
+import './Calculator.css';
+
 import * as React from 'react';
 
 import Display from '../Display/Display';
-import './Calculator.css';
 import Keypad from '../Keypad/Keypad';
 
 interface ICalculatorState {
@@ -37,14 +38,14 @@ export default class Calculator extends React.Component<{}, ICalculatorState> {
   }
 
   public setOperator = () => {
-    console.log('set operation');
+    // TODO
   };
 
   public updateDisplay = () => {
-    console.log('update display');
+    // TODO
   };
 
   public callOperator = () => {
-    console.log('call operation');
+    // TODO
   };
 }
